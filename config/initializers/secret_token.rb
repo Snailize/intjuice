@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Intjuice::Application.config.secret_token = 'e79a780377ee2c6e39439b15678716d44d447a7daec67e6391bd907d4dba30131d5e7f199bc01f07443054de33e6cd07b606a52f4d01905895e9db4f6a63b183'
+IntJuice::Application.config.secret_token = 'a453d38c96d35de79f992d3c2832ea87251584b89c940806e2d325aefd256bfbcea275bd0374f02b79e1297126abd2284ac8bedeeada66856fae6fcbe1ba53d6'
