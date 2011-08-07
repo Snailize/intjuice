@@ -37,5 +37,6 @@ gem 'jquery-rails'
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'guard-rspec'
+  gem 'database_cleaner'
 
   gem 'ruby-debug19', :require => 'ruby-debug'
