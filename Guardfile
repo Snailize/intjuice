@@ -1,7 +1,7 @@
 # A sample Guardfile
 # More info at https://github.com/guard/guard#readme
 
-guard 'rspec', :version => 2 do
+guard 'rspec', :cli => "--drb", :version => 2 do
   watch(%r{^spec/.+_spec\.rb$})
   watch(%r{^lib/(.+)\.rb$})     { |m| "spec/lib/#{m[1]}_spec.rb" }
   watch('spec/spec_helper.rb')  { "spec" }
@@ -17,4 +17,25 @@ guard 'rspec', :version => 2 do
   watch('app/controllers/application_controller.rb')  { "spec/controllers" }
   # Capybara request specs
   watch(%r{^app/views/(.+)/.*\.(erb|haml)$})          { |m| "spec/requests/#{m[1]}_spec.rb" }
+end
+guard 'cucumber', :cli => "--drb" do
+    watch(%r{^features/.+\.feature$})
+     watch(%r{^features/support/.+$}) { 'features' }
+     watch(%r{^app/assets/.+$})       { 'features' }
+
+     watch(%r{^features/step_definitions/(.+)_steps\.rb$}) do |m|
+       Dir[File.join("**/#{m[1]}.feature")][0] || 'features'
+     end
+
+     # Rerun failed features
+     watch('config/routes.rb')
+     watch(%r{^app/(.*)\.rb})
+end
+
+guard 'spork', :cucumber_env => { 'RAILS_ENV' => 'test' }, :rspec_env => { 'RAILS_ENV' => 'test' } do
+  watch('config/application.rb')
+  watch('config/environment.rb')
+  watch(%r{^config/environments/.+\.rb$})
+  watch(%r{^config/initializers/.+\.rb$})
+  watch('spec/spec_helper.rb')
 end

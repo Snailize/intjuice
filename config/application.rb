@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require File.expand_path('../boot', __FILE__)
 
 # Pick the frameworks you want:
@@ -42,7 +43,7 @@ module IntJuice
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    # config.i18n.default_locale = :de
+    config.i18n.default_locale = 'zh-CN'
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"

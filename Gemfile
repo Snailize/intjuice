@@ -22,7 +22,11 @@ gem "bson_ext", ">= 1.3.1"
 gem "mongoid", ">= 2.0.2"
 gem "devise", ">= 1.4.2"
 gem "guard-rspec"  
+gem 'guard-spork'
+gem 'spork'
+gem "guard-cucumber"
 
 gem 'growl' if RUBY_PLATFORM =~ /darwin/
 gem "rb-inotify" if RUBY_PLATFORM =~ /linux/
 gem "libnotify" if RUBY_PLATFORM =~ /linux/
+gem 'web-app-theme'

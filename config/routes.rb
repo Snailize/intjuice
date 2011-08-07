@@ -1,8 +1,9 @@
+# -*- encoding : utf-8 -*-
 IntJuice::Application.routes.draw do
   #get \"users\/show\"
 
   root :to => "home#index"
-
+  get '/admin' => 'admin#index'
   devise_for :users
   resources :users, :only => :show
 
